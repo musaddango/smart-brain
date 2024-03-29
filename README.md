@@ -30,7 +30,7 @@ To get started with the Smart Brain App, follow these steps:
    git@github.com:musaddango/smart-brain.git
    ```
 
-2. Install dependencies for frontend (backend is containerized and run on docker):
+2. Install dependencies for frontend (backend is containerized and as such, it runs on docker):
 
    ```
    # Install frontend dependencies
@@ -39,10 +39,10 @@ To get started with the Smart Brain App, follow these steps:
    ```
 
 3. Setting up PostgreSQL database:
-   - This is containerized and in the docker-compose configuration.
+   - This is containerized and it's set up in the docker-compose configuration.
    
 4. Setting up Redis:
-   - This is containerized and in the docker-compose configuration.
+   - This is containerized and it's set up in the docker-compose configuration.
 
 5. Obtain API keys:
    - Sign up for a Clarifai API key and add it to the backend configuration.
