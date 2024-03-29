@@ -18,6 +18,7 @@ The Smart Brain App is a web application designed to detect faces in images usin
 - **Face Detection API:** Clarifai
 - **Caching:** Redis
 - **Session Management:** JSON Web Token (JWT)
+- **Containerization:** Docker
 
 ## Getting Started
 
@@ -26,44 +27,41 @@ To get started with the Smart Brain App, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/smart-brain-app.git
+   git@github.com:musaddango/smart-brain.git
    ```
 
-2. Install dependencies for both frontend and backend:
+2. Install dependencies for frontend (backend is containerized and run on docker):
 
    ```
    # Install frontend dependencies
    cd smart-brain-app/frontend
    npm install
-
-   # Install backend dependencies
-   cd ../backend
-   npm install
    ```
 
-3. Set up PostgreSQL database:
-   - Create a PostgreSQL database and configure the connection in the backend.
+3. Setting up PostgreSQL database:
+   - This is containerized and in the docker-compose configuration.
    
-4. Set up Redis:
-   - Install and configure Redis for caching in the backend.
+4. Setting up Redis:
+   - This is containerized and in the docker-compose configuration.
 
 5. Obtain API keys:
    - Sign up for a Clarifai API key and add it to the backend configuration.
    
 6. Start the development servers:
+   - Before starting the servers, ensure docker is installed on your machine as being that it's required for the backend and its services (Postgres and Redis DB) to work.
 
    ```
+   # Start backend server
+   cd ../backend
+   docker-compose build
+   
    # Start frontend server
    cd ../frontend
    npm start
-
-   # Start backend server
-   cd ../backend
-   npm start
    ```
 
-7. Access the application:
-   - Open your browser and navigate to `http://localhost:3000` to use the Smart Brain App.
+8. Access the application:
+   - Open your browser and navigate to the frontend server (eg. `http://localhost:3000`) to use the Smart Brain App.
 
 
 ## License
