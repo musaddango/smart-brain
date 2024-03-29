@@ -18,7 +18,6 @@ The Smart Brain App is a web application designed to detect faces in images usin
 - **Face Detection API:** Clarifai
 - **Caching:** Redis
 - **Session Management:** JSON Web Token (JWT)
-- **Testing:** Jest
 
 ## Getting Started
 
