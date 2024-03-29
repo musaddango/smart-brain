@@ -1,7 +1,5 @@
 # smart-brain-app
 
-# Smart Brain App
-
 The Smart Brain App is a web application designed to detect faces in images using advanced AI technology. It utilizes React.js on the front end, Express.js on the back end, and a PostgreSQL database to store user information and image data.
 
 ## Features
