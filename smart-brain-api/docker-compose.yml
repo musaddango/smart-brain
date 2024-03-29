@@ -1,0 +1,50 @@
+version: '3.6'
+
+services:
+  # Backend server
+  smart-brain-api:
+    container_name: backend
+    restart: always
+    build: ./
+    command: npm start
+    working_dir: /usr/src/smart-brain-app/
+    environment:
+      DB_PASSWORD_SB: postgres
+      DB_USER: postgres
+      DB_DATABASE: postgres
+      CLARIFY_API_KEY: c8db009aaef54f32881b3184e7aed53d
+      CLARIFY_USER_ID: musadango
+      DB_HOST: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./:/usr/src/smart-brain-app/
+  
+  postgres:
+    container_name: database
+    restart: always
+    build: ./postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports: 
+      - "5432:5432"
+    volumes:
+      - db_cache:/var/lib/postgresql
+  
+  redis:
+    container_name: redis
+    restart: always
+    image: redis:7.2-alpine
+    ports:
+      - '6379:6379'
+    volumes: 
+      - cache:/data
+      
+volumes:
+  cache:
+    driver: local
+  db_cache:
+    driver: local
+  
